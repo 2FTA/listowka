@@ -34,12 +34,14 @@
         }
 
         .header {
-            display: flex;
-            align-items: center;
-			justify-content: center;
-            gap: 12px;
-            margin-bottom: 8px;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;             /* убираем лишний промежуток */
+    margin: 0;          /* убираем все внешние отступы */
+    padding: 0;         /* убираем внутренние отступы */
+    margin-bottom: 10px; /* небольшой отступ снизу */
+}
 
         .header h1 {
             font-size: 2.6rem;
