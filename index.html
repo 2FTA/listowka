@@ -15,6 +15,9 @@
             background: #f9f5ee;
             color: #2e241e;
             min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             padding: 20px;
             font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
         }
@@ -27,35 +30,37 @@
             padding: 30px 28px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.06);
             border: 1px solid #efe6da;
-            margin: 0 auto;
         }
 
+        /* ===== Главное: убираем все отступы у хедера ===== */
         .header {
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0;
             padding: 0;
+            line-height: 0;  /* убивает лишние вертикальные отступы */
         }
 
+        /* ===== Логотип: большой и центрированный ===== */
         .header img {
-            max-height: 50vh;      /* меняйте под ваш вкус */
+            max-height: 50vh;      /* 50% высоты окна — меняйте под себя */
             width: auto;
-            max-width: 80%;
+            max-width: 90%;
             display: block;
-            margin: 0 auto;
+            margin: 0 auto;        /* убираем margin:20px, который давал отступы */
         }
 
+        /* ===== Подзаголовок ===== */
         .subtitle {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #7a6a5c;
             border-left: 4px solid #d4a373;
-            padding-left: 16px;
+            padding: 10px 16px;
             background: #fcf8f3;
             border-radius: 0 12px 12px 0;
+            margin: 10px 0 20px 0;  /* сверху 10px, снизу 20px */
             line-height: 1.4;
-            padding: 10px 16px;
-            margin: 10px 0 20px 0;
         }
 
         .shop-grid {
@@ -101,18 +106,17 @@
             color: #b5927a;
             font-size: 1.2rem;
             flex-shrink: 0;
+            transition: 0.15s;
         }
 
         .shop-item:hover {
             background: #fffcf8;
             border-color: #d4a373;
         }
-
         .shop-item:hover a .arrow {
             color: #8b5e3c;
             transform: translateX(4px);
         }
-
         .shop-item:active {
             background: #f3ede7;
             transform: scale(0.98);
@@ -141,7 +145,11 @@
                 grid-template-columns: 1fr;
             }
             .header img {
-                max-height: 30vh; /* чуть меньше на телефонах */
+                max-height: 30vh;   /* на телефонах поменьше */
+            }
+            .subtitle {
+                font-size: 1rem;
+                margin: 8px 0 16px 0;
             }
         }
     </style>
@@ -152,10 +160,10 @@
         <img src="Logo.svg" alt="Одеська приватна пивоварня">
     </div>
     <div class="subtitle">
-         Оберіть зручний магазин
+        🌾 Оберіть зручний магазин
     </div>
     <div class="shop-grid">
-        <!-- здесь ваш список магазинов -->
+        <!-- Список ваших магазинов (вставьте свои) -->
         <div class="shop-item">
             <a href="https://www.google.com/maps/search/вул.+Академіка+Сахарова,+36" target="_blank">
                 <span class="icon">🏪</span>
@@ -163,11 +171,25 @@
                 <span class="arrow">→</span>
             </a>
         </div>
-        <!-- остальные адреса ... -->
+        <div class="shop-item">
+            <a href="https://www.google.com/maps/search/Десантний+бульвар,+3" target="_blank">
+                <span class="icon">🏪</span>
+                <span class="address">Десантний бульвар, 3</span>
+                <span class="arrow">→</span>
+            </a>
+        </div>
+        <div class="shop-item">
+            <a href="https://www.google.com/maps/search/пр-т+Володимира+Великого,+39а" target="_blank">
+                <span class="icon">🏪</span>
+                <span class="address">пр-т Володимира Великого, 39а</span>
+                <span class="arrow">→</span>
+            </a>
+        </div>
+        <!-- добавьте остальные 11 магазинов по такому же принципу -->
     </div>
     <div class="footer">
-        
-        
+        <span>📞 +38 (048) 777-77-77</span>
+        <span class="hours">🕒 Пн–Нд: 10:00 – 22:00</span>
     </div>
 </div>
 </body>
