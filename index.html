@@ -12,78 +12,62 @@
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
-            background: #f9f5ee; /* теплий світлий фон */
+            background: #f9f5ee;
             color: #2e241e;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
+            padding: 20px;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
         }
 
         .card {
             max-width: 820px;
             width: 100%;
             background: #ffffff;
-            border-radius: 40px;
-            padding: 44px 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06), 0 8px 20px rgba(0,0,0,0.04);
+            border-radius: 32px;
+            padding: 30px 28px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
             border: 1px solid #efe6da;
-            transition: 0.3s;
+            margin: 0 auto;
         }
 
         .header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;             /* убираем лишний промежуток */
-    margin: 0;          /* убираем все внешние отступы */
-    padding: 0;         /* убираем внутренние отступы */
-    margin-bottom: 10px; /* небольшой отступ снизу */
-}
-
-        .header h1 {
-            font-size: 2.6rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: #8b5e3c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
         }
 
-        .header span {
-            font-size: 2.8rem;
+        .header img {
+            max-height: 50vh;      /* меняйте под ваш вкус */
+            width: auto;
+            max-width: 80%;
+            display: block;
+            margin: 0 auto;
         }
 
         .subtitle {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #7a6a5c;
-            margin-bottom: 32px;
             border-left: 4px solid #d4a373;
-            padding-left: 18px;
+            padding-left: 16px;
             background: #fcf8f3;
             border-radius: 0 12px 12px 0;
-            line-height: 1.5;
+            line-height: 1.4;
+            padding: 10px 16px;
+            margin: 10px 0 20px 0;
         }
 
         .shop-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 14px;
+            gap: 12px;
         }
 
         .shop-item {
             background: #fcf9f5;
-            border-radius: 18px;
-            padding: 16px 18px;
+            border-radius: 16px;
             border: 1px solid #ece3d8;
-            transition: 0.2s ease;
-        }
-
-        .shop-item:hover {
-            background: #fffcf8;
-            border-color: #d4a373;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 14px rgba(0,0,0,0.04);
         }
 
         .shop-item a {
@@ -94,23 +78,34 @@
             color: #2e241e;
             font-size: 1rem;
             font-weight: 500;
+            padding: 14px 16px;
+            border-radius: 16px;
+            transition: 0.15s ease;
         }
 
         .shop-item a .icon {
             font-size: 1.6rem;
-            width: 36px;
+            width: 34px;
             text-align: center;
+            flex-shrink: 0;
         }
 
         .shop-item a .address {
             flex: 1;
             line-height: 1.3;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .shop-item a .arrow {
             color: #b5927a;
             font-size: 1.2rem;
-            transition: 0.2s;
+            flex-shrink: 0;
+        }
+
+        .shop-item:hover {
+            background: #fffcf8;
+            border-color: #d4a373;
         }
 
         .shop-item:hover a .arrow {
@@ -118,34 +113,35 @@
             transform: translateX(4px);
         }
 
+        .shop-item:active {
+            background: #f3ede7;
+            transform: scale(0.98);
+        }
+
         .footer {
-            margin-top: 34px;
-            padding-top: 20px;
+            margin-top: 28px;
+            padding-top: 18px;
             border-top: 1px solid #e9ddd0;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
             font-size: 0.9rem;
             color: #7a6a5c;
         }
 
-        .footer .hours {
-            background: #f3ede7;
-            padding: 6px 16px;
-            border-radius: 40px;
-            font-weight: 500;
-        }
-
         @media (max-width: 640px) {
-            .card {
-                padding: 28px 18px;
+            body {
+                padding: 12px;
             }
-            .header h1 {
-                font-size: 2rem;
+            .card {
+                padding: 20px 16px;
             }
             .shop-grid {
                 grid-template-columns: 1fr;
+            }
+            .header img {
+                max-height: 30vh; /* чуть меньше на телефонах */
             }
         }
     </style>
@@ -153,132 +149,24 @@
 <body>
 <div class="card">
     <div class="header">
-    <img src="Logo.svg" alt="Одеська приватна пивоварня" style="max-height: 40vh; width: auto; max-width: 90%; display: block; margin: 20px auto;">
-</div>
+        <img src="Logo.svg" alt="Одеська приватна пивоварня">
+    </div>
     <div class="subtitle">
          Оберіть зручний магазин
     </div>
-
     <div class="shop-grid">
-        <!-- ★★★ 13 МАГАЗИНІВ (змініть адреси та посилання) ★★★ -->
-
+        <!-- здесь ваш список магазинов -->
         <div class="shop-item">
-            <a href="https://www.google.com/maps/place/%D0%9E%D0%B4%D0%B5%D1%81%D1%8C%D0%BA%D0%B0+%D0%BF%D1%80%D0%B8%D0%B2%D0%B0%D1%82%D0%BD%D0%B0+%D0%BF%D0%B8%D0%B2%D0%BE%D0%B2%D0%B0%D1%80%D0%BD%D1%8F/@46.5771477,30.8077396,19.25z/data=!4m6!3m5!1s0x40c63b73b7931d49:0x56461aa911b17f2a!8m2!3d46.5770901!4d30.8079143!16s%2Fg%2F11xkqxv_3b?entry=ttu&g_ep=EgoyMDI2MDcyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+            <a href="https://www.google.com/maps/search/вул.+Академіка+Сахарова,+36" target="_blank">
                 <span class="icon">🏪</span>
                 <span class="address">вул. Академіка Сахарова, 36</span>
                 <span class="arrow">→</span>
             </a>
         </div>
-
-        <div class="shop-item">
-            <a href="https://www.google.com/maps/place/Odes%CA%B9ka+Pryvatna+Pyvovarnya/@46.5746013,30.7917392,20.75z/data=!4m15!1m8!3m7!1s0x40c6252ab0230059:0xc924f5af908addf2!2z0JTQtdGB0LDQvdGC0L3Ri9C5INCx0YPQuy4sIDMsINCe0LTQtdGB0YHQsCwg0J7QtNC10YHRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwg0KPQutGA0LDQuNC90LAsIDY1MDY5!3b1!8m2!3d46.5745756!4d30.791869!16s%2Fg%2F11xrzzqps2!3m5!1s0x40c63bb51a40037f:0xe1ff46623149e892!8m2!3d46.5746472!4d30.7918909!16s%2Fg%2F11xlsvf4wv?entry=ttu&g_ep=EgoyMDI2MDcyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                <span class="icon">🏪</span>
-                <span class="address">Десантний бульвар, 3</span>
-                <span class="arrow">→</span>
-            </a>
-        </div>
-
-        <div class="shop-item">
-            <a href="https://www.google.com/maps/place/%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%BA%D0%B0%D1%8F+%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B0%D1%8F+%D0%BF%D0%B8%D0%B2%D0%BE%D0%B2%D0%B0%D1%80%D0%BD%D1%8F/@46.567496,30.7767521,20.17z/data=!4m6!3m5!1s0x40c625323b216d3b:0x2fab35f1e80422e9!8m2!3d46.5675078!4d30.7765869!16s%2Fg%2F11bzs1wv33?entry=ttu&g_ep=EgoyMDI2MDcyMS4wIKXMDSoASAFQAw%3D%3D">
-                <span class="icon">🏪</span>
-                <span class="address">пр-т Володимира Великого, 39а</span>
-                <span class="arrow">→</span>
-            </a>
-        </div>
-
-        <div class="shop-item">
-            <a href="https://www.google.com/maps/place/%D1%83%D0%BB.+%D0%98%D1%86%D1%85%D0%B0%D0%BA%D0%B0+%D0%A0%D0%B0%D0%B1%D0%B8%D0%BD%D0%B0,+16,+%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%B0,+%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0,+65000/@46.4379463,30.7006604,19.25z/data=!4m6!3m5!1s0x40c6325357c46fd1:0x5dee498c7150eb48!8m2!3d46.4381028!4d30.7009195!16s%2Fg%2F1tfd5glt?entry=ttu&g_ep=EgoyMDI2MDcyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                <span class="icon">🏪</span>
-                <span class="address">вул. Іцхака Рабіна, 16</span>
-                <span class="arrow">→</span>
-            </a>
-        </div>
-
-        <div class="shop-item">
-            <a href="https://www.google.com/maps/place/%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%BA%D0%B0%D1%8F+%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B0%D1%8F+%D0%BF%D0%B8%D0%B2%D0%BE%D0%B2%D0%B0%D1%80%D0%BD%D1%8F/@46.5854405,30.8015131,19.75z/data=!4m15!1m8!3m7!1s0x40c624cc5553a4c9:0x37201dcf2ec7594e!2z0YPQuy4g0KHQtdC80ZHQvdCwINCf0LDQu9C40Y8sIDEyMCwg0J7QtNC10YHRgdCwLCDQntC00LXRgdGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCDQo9C60YDQsNC40L3QsCwgNjUwMDA!3b1!8m2!3d46.5856859!4d30.8017545!16s%2Fg%2F11bw408bvz!3m5!1s0x40c62576da6fd517:0x860d28c5cc6b7780!8m2!3d46.5853815!4d30.8018734!16s%2Fg%2F11rhp6hh6c?entry=ttu&g_ep=EgoyMDI2MDcyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                <span class="icon">🏪</span>
-                <span class="address">вул. Семена Палія, 120/1</span>
-                <span class="arrow">→</span>
-            </a>
-        </div>
-
-        <div class="shop-item">
-            <a href="https://www.google.com/maps/place/%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%BA%D0%B0%D1%8F+%D0%A7%D0%B0%D1%81%D1%82%D0%BD%D0%B0%D1%8F+%D0%9F%D0%B8%D0%B2%D0%BE%D0%B2%D0%B0%D1%80%D0%BD%D1%8F/@46.4284531,30.7204455,19.5z/data=!4m9!1m2!2m1!1z0LLRg9C7LiDQktCw0YDQvdC10L3RgdGM0LrQsCwgNw!3m5!1s0x40c633a0f25824c9:0x1c270e3d3bbc82d9!8m2!3d46.428317!4d30.7207348!16s%2Fg%2F11ddzhq7w0?entry=ttu&g_ep=EgoyMDI2MDcyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                <span class="icon">🏪</span>
-                <span class="address">вул. Варненська, 7</span>
-                <span class="arrow">→</span>
-            </a>
-        </div>
-
-        <div class="shop-item">
-            <a href="https://www.google.com/maps/place/%D0%9E%D0%B4%D0%B5%D1%81%D1%8C%D0%BA%D0%B0+%D0%BF%D1%80%D0%B8%D0%B2%D0%B0%D1%82%D0%BD%D0%B0+%D0%BF%D0%B8%D0%B2%D0%BE%D0%B2%D0%B0%D1%80%D0%BD%D1%8F/@46.449313,30.7423204,19z/data=!4m16!1m9!3m8!1s0x40c633c382936597:0xc7914b95c13687e!2z0KHQtdCz0LXQtNGB0LrQsNGPINGD0LsuLCAxMiwg0J7QtNC10YHRgdCwLCDQntC00LXRgdGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCDQo9C60YDQsNC40L3QsCwgNjUwMDA!3b1!8m2!3d46.4493121!4d30.7429641!10e3!16s%2Fg%2F1vzg0rnl!3m5!1s0x40c633fa8a16a975:0x1f1bc3827c476a08!8m2!3d46.4493121!4d30.7429641!16s%2Fg%2F11xl5x65bs?hl=ru&entry=ttu&g_ep=EgoyMDI2MDcyMS4wIKXMDSoASAFQAw%3D%3D">
-                <span class="icon">🏪</span>
-                <span class="address">вул. Сегедська, 12</span>
-                <span class="arrow">→</span>
-            </a>
-        </div>
-
-        <div class="shop-item">
-            <a href="https://www.google.com/maps/place/%D0%9E%D0%B4%D0%B5%D1%81%D1%8C%D0%BA%D0%B0+%D0%BF%D1%80%D0%B8%D0%B2%D0%B0%D1%82%D0%BD%D0%B0+%D0%BF%D0%B8%D0%B2%D0%BE%D0%B2%D0%B0%D1%80%D0%BD%D1%8F/@46.4802931,30.6432026,19z/data=!4m15!1m8!3m7!1s0x40c62dc2a615a75f:0xfd3d6a8d9586a856!2z0JzQvtGC0L7RgNC90LDRjyDRg9C7LiwgOCwg0J7QtNC10YHRgdCwLCDQntC00LXRgdGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCDQo9C60YDQsNC40L3QsCwgNjUwMDA!3b1!8m2!3d46.4804815!4d30.6445184!16s%2Fg%2F11rwrll8vj!3m5!1s0x40c62dcdbb03b419:0x282073e5a775cd9f!8m2!3d46.4801226!4d30.6439118!16s%2Fg%2F11ydtj1m84?hl=ru&entry=ttu&g_ep=EgoyMDI2MDcyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                <span class="icon">🏪</span>
-                <span class="address">вул. Моторна, 8/55</span>
-                <span class="arrow">→</span>
-            </a>
-        </div>
-
-        <div class="shop-item">
-            <a href="https://www.google.com/maps/place/%D1%83%D0%BB.+%D0%90%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D0%BA%D0%B0+%D0%97%D0%B0%D0%B1%D0%BE%D0%BB%D0%BE%D1%82%D0%BD%D0%BE%D0%B3%D0%BE,+40,+%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%B0,+%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0,+65000/@46.5784423,30.7951222,21z/data=!4m7!3m6!1s0x40c624d494f5f773:0x846d722c69762486!8m2!3d46.5785577!4d30.794968!10e3!16s%2Fg%2F1tfnx2rb?hl=ru&entry=ttu&g_ep=EgoyMDI2MDcyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                <span class="icon">🏪</span>
-                <span class="address">вул. Академіка Заболотного, 40</span>
-                <span class="arrow">→</span>
-            </a>
-        </div>
-
-        <div class="shop-item">
-            <a href="https://www.google.com/maps/search/вул.+Преображенська,+30,+Одеса" target="_blank">
-                <span class="icon">🏪</span>
-                <span class="address">вул. Преображенська, 30</span>
-                <span class="arrow">→</span>
-            </a>
-        </div>
-
-        <div class="shop-item">
-            <a href="https://www.google.com/maps/place/%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%BA%D0%B0%D1%8F+%D0%A7%D0%B0%D1%81%D1%82%D0%BD%D0%B0%D1%8F+%D0%9F%D0%B8%D0%B2%D0%BE%D0%B2%D0%B0%D1%80%D0%BD%D1%8F/@46.3959323,30.7319196,18.5z/data=!4m15!1m8!3m7!1s0x40c634a4200e7a97:0x6e5f1c13292ad924!2z0JvRjtGB0YLQtNC-0YDRhNGB0LrQsNGPINC00L7RgC4sIDE3MC8yLCDQntC00LXRgdGB0LAsINCe0LTQtdGB0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsINCj0LrRgNCw0LjQvdCwLCA2NTAwMA!3b1!8m2!3d46.3957286!4d30.7319201!16s%2Fg%2F1v96k93k!3m5!1s0x40c634a40f8db8ad:0xda92f950dd96b601!8m2!3d46.3959517!4d30.7335177!16s%2Fg%2F11gd1ryv_g?hl=ru&entry=ttu&g_ep=EgoyMDI2MDcyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                <span class="icon">🏪</span>
-                <span class="address">вул. Люстдорфська дорога, 170/2</span>
-                <span class="arrow">→</span>
-            </a>
-        </div>
-
-        <div class="shop-item">
-            <a href="https://www.google.com/maps/place/%D1%83%D0%BB.+%D0%9B%D0%B5%D0%B2%D0%B8%D1%82%D0%B0%D0%BD%D0%B0,+101,+%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%B0,+%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0,+65000/@46.4053835,30.7179631,19z/data=!3m1!4b1!4m6!3m5!1s0x40c6335d4224042f:0xd747cdd609d21072!8m2!3d46.4053826!4d30.7186068!16s%2Fg%2F11kq06ps0v?hl=ru&entry=ttu&g_ep=EgoyMDI2MDcyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                <span class="icon">🏪</span>
-                <span class="address">вул. Левітана, 101</span>
-                <span class="arrow">→</span>
-            </a>
-        </div>
-
-        <div class="shop-item">
-            <a href="https://www.google.com/maps/place/%D1%83%D0%BB.+%D0%A7%D0%B5%D1%80%D0%BD%D0%BE%D0%BC%D0%BE%D1%80%D1%81%D0%BA%D0%BE%D0%B3%D0%BE+%D0%9A%D0%B0%D0%B7%D0%B0%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0,+80,+%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%B0,+%D0%9E%D0%B4%D0%B5%D1%81%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0,+65000/@46.5259308,30.7289907,20z/data=!4m15!1m8!3m7!1s0x40c62fdf2e07a585:0xd53e0fc9c4fe7c6!2z0YPQuy4g0KfQtdGA0L3QvtC80L7RgNGB0LrQvtCz0L4g0JrQsNC30LDRh9C10YHRgtCy0LAsIDgwLCDQntC00LXRgdGB0LAsINCe0LTQtdGB0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsINCj0LrRgNCw0LjQvdCwLCA2NTAwMA!3b1!8m2!3d46.5250186!4d30.7302704!16s%2Fg%2F11crvs76sx!3m5!1s0x40c62fdedbb2be15:0x8751edc1c2d91660!8m2!3d46.5257846!4d30.7293534!16s%2Fg%2F11vc4lx1bh?hl=ru&entry=ttu&g_ep=EgoyMDI2MDcyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                <span class="icon">🏪</span>
-                <span class="address">вул. Чорноморського Козацтва, 80</span>
-                <span class="arrow">→</span>
-            </a>
-        </div>
-	
-	<div class="shop-item">
-            <a href="https://www.google.com/maps/place/%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%84%D0%B2%D0%B3%D0%B5%D0%BD%D0%B0+%D0%A7%D0%B8%D0%BA%D0%B0%D0%BB%D0%B5%D0%BD%D0%BA%D0%B0,+81,+%D0%9E%D0%B4%D0%B5%D1%81%D0%B0,+%D0%9E%D0%B4%D0%B5%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0,+65000/@46.3904964,30.7186401,21z/data=!4m6!3m5!1s0x40c634a9f515c38b:0xd4800c9ddae31f4!8m2!3d46.3905256!4d30.7188192!16s%2Fg%2F11f9yfdfvm?hl=ru&entry=ttu&g_ep=EgoyMDI2MDcyMS4wIKXMDSoASAFQAw%3D%3D">
-                <span class="icon">🏪</span>
-                <span class="address">вул. Євгена Чикаленка, 81 (Академіка Вільямса, 81)</span>
-                <span class="arrow">→</span>
-            </a>
-        </div>
-
-        <!-- ★★★ КІНЕЦЬ СПИСКУ ★★★ -->
+        <!-- остальные адреса ... -->
     </div>
-
     <div class="footer">
-        <span></span>
+        
         
     </div>
 </div>
